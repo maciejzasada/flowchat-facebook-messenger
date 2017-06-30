@@ -1,9 +1,10 @@
 {
   "name": "flowchat-facebook-messenger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Facebook Messenger I/O and Effects for Flowchat",
-  "main": "index.js",
+  "main": "dost/lib/index.js",
   "scripts": {
+    "compile": "babel --out-dir dist lib/*.js lib/**/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,5 +28,17 @@
   "homepage": "https://github.com/maciejzasada/flowchat-facebook-messenger#readme",
   "dependencies": {
     "redux-saga": "^0.15.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-plugin-transform-es2015-for-of": "^6.23.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-regenerator": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015-node6": "^0.4.0",
+    "babel-preset-stage-0": "^6.24.1"
   }
 }
