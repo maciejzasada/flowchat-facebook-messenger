@@ -1,6 +1,6 @@
 {
   "name": "flowchat-facebook-messenger",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Facebook Messenger I/O and Effects for Flowchat",
   "main": "dist/lib/index.js",
   "scripts": {
@@ -27,7 +27,12 @@
   },
   "homepage": "https://github.com/maciejzasada/flowchat-facebook-messenger#readme",
   "dependencies": {
-    "redux-saga": "^0.15.4"
+    "body-parser": "^1.17.2",
+    "crypto": "^0.0.3",
+    "express": "^4.15.3",
+    "redux-saga": "^0.15.4",
+    "request": "^2.81.0",
+    "rx-lite": "^4.0.8"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
