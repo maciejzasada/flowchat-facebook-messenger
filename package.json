@@ -1,8 +1,8 @@
 {
   "name": "flowchat-facebook-messenger",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Facebook Messenger I/O and Effects for Flowchat",
-  "main": "dost/lib/index.js",
+  "main": "dist/lib/index.js",
   "scripts": {
     "compile": "babel --out-dir dist lib/*.js lib/**/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
