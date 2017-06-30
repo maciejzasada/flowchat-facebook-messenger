@@ -1,6 +1,6 @@
 {
   "name": "flowchat-facebook-messenger",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Facebook Messenger I/O and Effects for Flowchat",
   "main": "dist/lib/index.js",
   "scripts": {
