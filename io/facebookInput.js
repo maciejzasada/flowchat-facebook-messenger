@@ -12,11 +12,6 @@ export class FacebookInput {
     this._subject = new Subject();
     this._app = express();
     this._app.use(bodyParser.json({ verify: this.verifyRequestSignature.bind(this) }));
-
-    this._app.get('/', (req, res) => {
-      res.status(200).send('Hello, world!').end();
-    });
-
     this._app.get('/webhook', this.getWebhook.bind(this));
     this._app.post('/webhook', this.postWebhook.bind(this));
   }
