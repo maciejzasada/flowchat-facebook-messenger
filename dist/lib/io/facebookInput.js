@@ -7,6 +7,7 @@ var _assign2 = _interopRequireDefault(_assign);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.FacebookInput = undefined;
 
 var _bodyParser = require('body-parser');
 
@@ -113,4 +114,4 @@ class FacebookInput {
     this.subject.onNext({ data, state, sessionId });
   }
 }
-exports.default = FacebookInput;
+exports.FacebookInput = FacebookInput;

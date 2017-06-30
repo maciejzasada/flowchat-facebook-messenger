@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.FacebookOutput = undefined;
 
 var _request = require('request');
 
@@ -44,5 +45,5 @@ class FacebookOutput {
   }
 
 }
-exports.default = FacebookOutput;
+exports.FacebookOutput = FacebookOutput;
 FacebookOutput.API_URI = 'https://graph.facebook.com/v2.6/me/messages';

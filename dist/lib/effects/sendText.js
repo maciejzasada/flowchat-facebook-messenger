@@ -10,8 +10,14 @@ Object.defineProperty(exports, "__esModule", {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = _regenerator2.default.mark(function _callee(data, sessionId) {
-  return _regenerator2.default.wrap(function _callee$(_context) {
+var _marked = [sendText].map(_regenerator2.default.mark);
+
+exports.sendText = sendText;
+
+var _effects = require('redux-saga/effects');
+
+function sendText(data, sessionId) {
+  return _regenerator2.default.wrap(function sendText$(_context) {
     while (1) switch (_context.prev = _context.next) {
       case 0:
         _context.next = 2;
@@ -21,7 +27,5 @@ exports.default = _regenerator2.default.mark(function _callee(data, sessionId) {
       case 'end':
         return _context.stop();
     }
-  }, _callee, this);
-});
-
-var _effects = require('redux-saga/effects');
+  }, _marked[0], this);
+}
