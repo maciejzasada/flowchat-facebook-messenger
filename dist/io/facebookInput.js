@@ -34,11 +34,6 @@ class FacebookInput {
     this._subject = new _rxLite.Subject();
     this._app = (0, _express2.default)();
     this._app.use(_bodyParser2.default.json({ verify: this.verifyRequestSignature.bind(this) }));
-
-    this._app.get('/', (req, res) => {
-      res.status(200).send('Hello, world!').end();
-    });
-
     this._app.get('/webhook', this.getWebhook.bind(this));
     this._app.post('/webhook', this.postWebhook.bind(this));
   }
