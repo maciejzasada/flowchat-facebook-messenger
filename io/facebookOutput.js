@@ -9,8 +9,8 @@ export class FacebookOutput {
     this.subscribe = this._subscribe.bind(this);
   }
 
-  _subscribe(output) {
-    this._send(output.data, output.sessionId);
+  _subscribe({ data, sessionId }) {
+    this._send(data, sessionId);
   }
 
   _send(data, recipientId) {
