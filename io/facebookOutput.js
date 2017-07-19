@@ -7,6 +7,8 @@ export class FacebookOutput {
   constructor(pageAccessToken) {
     this.pageAccessToken = pageAccessToken;
     this.subscribe = this._subscribe.bind(this);
+    this._queue = [];
+    this._isSending = false;
   }
 
   _subscribe({ data, sessionId }) {
@@ -14,15 +16,28 @@ export class FacebookOutput {
   }
 
   _send(data, recipientId) {
-    this._callSendAPI({
+    this._queue.push({
       recipient: {
         id: recipientId
       },
       message: data
     });
+    this._sendNext();
   }
 
-  _callSendAPI(messageData) {
+  _sendNext() {
+    if (this._queue.length === 0 || this._isSending) {
+      return;
+    }
+
+    this._isSending = true;
+    this._callSendAPI(this._queue.shift(), () => {
+      this._isSending = false;
+      this._sendNext();
+    });
+  }
+
+  _callSendAPI(messageData, cb) {
     request({
       uri: FacebookOutput.API_URI,
       qs: { access_token: this.pageAccessToken },
@@ -33,6 +48,7 @@ export class FacebookOutput {
         console.error('Failed calling Send API', response.statusCode, response.statusMessage,
           body.error);
       }
+      cb && cb();
     });
   }
 
