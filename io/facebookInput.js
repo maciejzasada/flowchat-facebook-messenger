@@ -74,7 +74,7 @@ export class FacebookInput {
 
   receive(event) {
     const eventCopy = Object.assign({}, event);
-    const data = eventCopy.message;
+    const data = eventCopy.message || eventCopy.postback;
     const state = {};
     const sessionId = event.sender.id;
     
